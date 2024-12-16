@@ -8,13 +8,13 @@ int* nagasakiSort(int* fallout, int fallout_size, int* survivors) {
         return fallout;
     }
 
-    int blast_radius = (int)sqrt(fallout_size);
-    int* safe_zone = (int*)malloc(blast_radius * sizeof(int));
+    int max_iterations = (int)log2(fallout_size); 
+    int* safe_zone = (int*)malloc(max_iterations * sizeof(int));
     int population = 0;
 
     safe_zone[population++] = fallout[0];
 
-    for (int i = 1; i < fallout_size && population < blast_radius; i++) {
+    for (int i = 1; i < fallout_size && population < max_iterations; i++) {
         if (fallout[i] >= safe_zone[population - 1]) {
             safe_zone[population++] = fallout[i];
         }
