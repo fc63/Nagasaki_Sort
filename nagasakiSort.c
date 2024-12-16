@@ -36,8 +36,8 @@ int main() {
     int fallout[] = {1, 5, 2, 3, 8, 6, 7, 10, 12, 11, 88, 45, 35, 68, 9, 687, 5, 23, 56, 78, 43, 90, 15, 27, 19, 50, 73, 81, 96, 102, 67, 38, 29, 59, 123, 134, 144, 199, 210, 305, 407, 506, 608, 701, 85, 95, 107, 207, 307, 408, 510, 612, 750, 888, 920, 1001, 1115, 1212, 1325, 1423, 1538, 1647, 1777, 1899, 1934, 2000};
     
     int fallout_size = sizeof(fallout) / sizeof(fallout[0]);
+    printf("The size of the given array: %d\n", fallout_size);
     int survivors;
-
     int* safe_zone = nagasakiSort(fallout, fallout_size, &survivors);
 
     if (safe_zone == NULL) {
